@@ -45,7 +45,9 @@ export default function MapaRed({ sistemas = [], estaciones = [], pozos = [], pr
   const sugerencias = useMemo(() => {
     if (!busqueda.trim()) return [];
     const q = busqueda.toLowerCase();
-    const s = sistemas.filter((s) => s.nombre.toLowerCase().includes(q)).slice(0, 5);
+    const s = sistemas
+      .filter((s) => s.nombre.toLowerCase().includes(q) || s.id.toLowerCase().includes(q))
+      .slice(0, 5);
     return s;
   }, [busqueda, sistemas]);
 
@@ -123,8 +125,8 @@ export default function MapaRed({ sistemas = [], estaciones = [], pozos = [], pr
         </div>
       </MapContainer>
 
-      {/* Panel de capas + selector de tiles */}
-      <div className="absolute top-3 left-3 z-[500] bg-white rounded-xl shadow-lg border border-slate-200 p-3 w-52 text-xs space-y-2">
+      {/* Panel de capas + selector de tiles + leyenda (columna única para no solaparse en mapas bajos) */}
+      <div className="absolute top-3 left-3 z-[500] max-h-[calc(100%-1.5rem)] overflow-y-auto bg-white rounded-xl shadow-lg border border-slate-200 p-3 w-40 sm:w-52 text-xs space-y-2">
         <div className="flex items-center gap-1.5 font-semibold text-slate-600">
           <Layers size={14} /> Capas
         </div>
@@ -153,10 +155,16 @@ export default function MapaRed({ sistemas = [], estaciones = [], pozos = [], pr
             Oscuro
           </button>
         </div>
+        <hr className="border-slate-100" />
+        <p className="font-semibold text-slate-600">Leyenda</p>
+        <Leyenda color={COLOR_TIPO.gasoducto} label="Gasoducto" />
+        <Leyenda color={COLOR_TIPO.oleoducto} label="Oleoducto" />
+        <Leyenda color={COLOR_TIPO.poliducto} label="Poliducto" />
+        <Leyenda color={COLOR_TIPO.propuesta} label="Propuesta" />
       </div>
 
       {/* Buscador */}
-      <div className="absolute top-3 right-3 z-[500] w-64">
+      <div className="absolute top-3 right-3 z-[500] w-32 sm:w-64">
         <div className="bg-white rounded-xl shadow-lg border border-slate-200 flex items-center px-3 py-2 gap-2">
           <Search size={14} className="text-slate-400 shrink-0" />
           <input
@@ -184,15 +192,6 @@ export default function MapaRed({ sistemas = [], estaciones = [], pozos = [], pr
             ))}
           </div>
         )}
-      </div>
-
-      {/* Leyenda */}
-      <div className="absolute bottom-3 left-3 z-[500] bg-white rounded-xl shadow-lg border border-slate-200 p-3 text-[11px] space-y-1">
-        <p className="font-semibold text-slate-600 mb-1">Leyenda</p>
-        <Leyenda color={COLOR_TIPO.gasoducto} label="Gasoducto" />
-        <Leyenda color={COLOR_TIPO.oleoducto} label="Oleoducto" />
-        <Leyenda color={COLOR_TIPO.poliducto} label="Poliducto" />
-        <Leyenda color={COLOR_TIPO.propuesta} label="Propuesta" />
       </div>
 
       {panelAbierto && ductoSeleccionado && (
