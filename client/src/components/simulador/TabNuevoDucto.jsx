@@ -6,7 +6,7 @@ import { numero, moneda, porcentaje } from '../../lib/format.js';
 import FormulaDetails from '../FormulaDetails.jsx';
 import { Campo, Resultado } from './TabGas.jsx';
 
-const TERRENOS = ['llano', 'selva', 'montania'];
+const TERRENOS = ['llano', 'pie_de_monte', 'montana_selva'];
 
 function CapturaClicks({ onClick }) {
   useMapEvents({ click: (e) => onClick([e.latlng.lat, e.latlng.lng]) });

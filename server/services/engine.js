@@ -7,6 +7,7 @@
  * ingeniería reales.
  */
 import { mulberry32 } from './prng.js';
+import { ID_GAA } from './datos.js';
 
 // ---------------------------------------------------------------------
 // 4.1 Capacidad de gasoducto — Weymouth simplificado
@@ -57,25 +58,50 @@ const FACTORES_VISCOSIDAD = {
 };
 
 /**
+ * Los productos reales vienen como texto libre en español (p.ej. "crudo
+ * reconstituido", "combustibles importados (reversa)", "diésel", "jet fuel",
+ * "GLP", "propano", "condensado"). Se normaliza por coincidencia de
+ * substring a una de las claves de FACTORES_VISCOSIDAD, con 'crudo' como
+ * valor por defecto razonable para líquidos no reconocidos.
+ */
+export function normalizarProducto(productoLibre = '') {
+  const t = productoLibre.toLowerCase();
+  if (t.includes('reconstituid')) return 'reconstituido';
+  if (t.includes('glp') || t.includes('propano')) return 'glp';
+  if (t.includes('jet')) return 'jet_fuel';
+  if (t.includes('diesel') || t.includes('diésel')) return 'diesel_oil';
+  if (t.includes('gasolina')) return 'gasolina';
+  if (t.includes('kerosene') || t.includes('refinad')) return 'refinados';
+  return 'crudo';
+}
+
+export function contieneGlp(productos = []) {
+  return productos.some((p) => normalizarProducto(p) === 'glp');
+}
+
+/**
  * Q_bpd = 0.148 * C * d^2.63 * (dP_psi_milla)^0.54 * f_visc(producto)
+ * @param {string} producto clave de FACTORES_VISCOSIDAD o texto libre (se normaliza)
  */
 export function capacidadLiquidosHazenWilliams(diametro_pulg, producto = 'crudo', opts = {}) {
   const C = 120;
   const dP = opts.dp_psi_milla ?? 25;
   const d = Math.max(diametro_pulg - 0.5, 0.1);
   const Q_base = 0.148 * C * Math.pow(d, 2.63) * Math.pow(dP, 0.54);
-  const f_visc = FACTORES_VISCOSIDAD[producto] ?? 0.85;
+  const productoClave = FACTORES_VISCOSIDAD[producto] != null ? producto : normalizarProducto(producto);
+  const f_visc = FACTORES_VISCOSIDAD[productoClave] ?? 0.85;
   const Q_bpd = Q_base * f_visc;
   return {
     bpd: Number(Q_bpd.toFixed(0)),
-    supuestos: { C, dp_psi_milla: dP, diametro_interno_pulg: d, f_visc, producto },
+    supuestos: { C, dp_psi_milla: dP, diametro_interno_pulg: d, f_visc, producto: productoClave },
   };
 }
 
 // ---------------------------------------------------------------------
 // 4.3 CAPEX de ducto nuevo
 // ---------------------------------------------------------------------
-const COSTO_UNITARIO_TERRENO = { llano: 55000, selva: 82000, montania: 98000 };
+// Costo unitario real por pulgada-km (proyectos_inversion.json.parametros_financieros.capex_usd_por_pulgada_km)
+const COSTO_UNITARIO_TERRENO = { llano: 45000, pie_de_monte: 62000, montana_selva: 85000 };
 
 export function haversineKm([lat1, lng1], [lat2, lng2]) {
   const R = 6371;
@@ -111,8 +137,8 @@ export function volumenAnual(valor, unidad, utilizacion_pct) {
   switch (unidad) {
     case 'MMpcd': // MMpcd -> MPC/año: *365*1000
       return valor * util * 365 * 1000;
-    case 'MMm3/d': // MMm3/d -> MPC/año: *365*35.3147*1000/1000 = *365*35.3147
-      return valor * util * 365 * 35.3147;
+    case 'MMm3/d': // MM m3/d -> MPC/año: (valor*1e6 m3/d * 35.3147 cf/m3 / 1000 cf/MPC) * 365 = valor*365*35.3147*1000
+      return valor * util * 365 * 35.3147 * 1000;
     case 'BPD': // BPD -> bbl/año
       return valor * util * 365;
     default:
@@ -241,11 +267,18 @@ const FACTOR_CATEGORIA = {
   negativo: 0,
 };
 
+/**
+ * Índice de priorización = (gas_mmpcd + liquidos_bpd/500) / capex_interconexion_mm_usd × factor_categoria.
+ * Los pozos "ya conectados" (capex_interconexion_mm_usd === 0: PZ38 Margarita-Huacaya,
+ * PZ39 Incahuasi, PZ40 Boyuy-X2) no se dividen por cero: se devuelve `null`
+ * (no rankeable numéricamente) en vez de una utilidad infinita o forzada a 0.
+ */
 export function indicePozo(pozo) {
+  if (pozo.ya_conectado || !(pozo.capex_interconexion_mm_usd > 0)) return null;
   const { gas_mmpcd, liquidos_bpd } = pozo.produccion_potencial;
   const factor = FACTOR_CATEGORIA[pozo.categoria] ?? 0;
   const numerador = gas_mmpcd + liquidos_bpd / 500;
-  const indice = pozo.capex_interconexion_mm_usd > 0 ? (numerador / pozo.capex_interconexion_mm_usd) * factor : 0;
+  const indice = (numerador / pozo.capex_interconexion_mm_usd) * factor;
   return Number(indice.toFixed(3));
 }
 
@@ -254,9 +287,12 @@ export function rankearPozos(pozos, tarifas) {
     .map((p) => {
       const indice = indicePozo(p);
       const equivalenteMmpcd = p.produccion_potencial.gas_mmpcd + p.produccion_potencial.liquidos_bpd / 500;
-      const usd_mm_por_mmpcd = equivalenteMmpcd > 0 ? Number((p.capex_interconexion_mm_usd / equivalenteMmpcd).toFixed(2)) : null;
+      const usd_mm_por_mmpcd =
+        equivalenteMmpcd > 0 && p.capex_interconexion_mm_usd > 0
+          ? Number((p.capex_interconexion_mm_usd / equivalenteMmpcd).toFixed(2))
+          : null;
       let tir_pct = null;
-      if (p.categoria !== 'negativo' && equivalenteMmpcd > 0) {
+      if (!p.ya_conectado && p.categoria !== 'negativo' && equivalenteMmpcd > 0 && p.capex_interconexion_mm_usd > 0) {
         const esGas = p.produccion_potencial.gas_mmpcd >= p.produccion_potencial.liquidos_bpd / 500;
         const fin = evaluarFinanciero({
           capex_usd: p.capex_interconexion_mm_usd * 1e6,
@@ -270,7 +306,7 @@ export function rankearPozos(pozos, tarifas) {
       }
       return { ...p, indice, usd_mm_por_mmpcd, tir_pct };
     })
-    .sort((a, b) => b.indice - a.indice);
+    .sort((a, b) => (b.indice ?? -Infinity) - (a.indice ?? -Infinity));
 }
 
 // ---------------------------------------------------------------------
@@ -287,17 +323,24 @@ export function recomendacionScore(score) {
   return 'evaluar_standby';
 }
 
-/** Genera sub_scores determinísticos en [30,95] correlacionados a la utilización del ducto */
+/**
+ * Genera los 5 sub-scores reales (utilizacion, criticidad, costo_mantenimiento,
+ * integridad, demanda_futura) determinísticamente en [30,95], correlacionados
+ * con la utilización del ducto/sistema asociado a la estación (semilla fija
+ * 20260704 vía mulberry32). Se usa para las 43 estaciones sin score curado
+ * (y también para poblar el radar de las 12 curadas, ver estado.js).
+ */
 export function subScoresDeterministicos(estacionId, utilizacionPct, pesos) {
   const seedLocal = Array.from(estacionId).reduce((a, c) => a + c.charCodeAt(0), 0);
   const rng = mulberry32(seedLocal * 7919 + Math.round(utilizacionPct * 100));
   const base = 30 + (utilizacionPct / 100) * 55; // correlación con utilización
   const gen = () => Math.min(95, Math.max(30, Number((base + (rng() - 0.5) * 20).toFixed(1))));
   const sub_scores = {
-    integridad: gen(),
-    eficiencia: gen(),
+    utilizacion: gen(),
     criticidad: gen(),
-    mantenimiento: gen(),
+    costo_mantenimiento: gen(),
+    integridad: gen(),
+    demanda_futura: gen(),
   };
   return { sub_scores, score: scoreEstacion(sub_scores, pesos) };
 }
@@ -324,8 +367,11 @@ function estacionalidad(mes, sistema) {
 }
 
 function tarifaSistema(sistema, tarifas) {
-  if (sistema.tipo === 'gasoducto') return sistema.mercado === 'exportacion' ? tarifas.gas_exportacion : tarifas.gas_interno;
-  if (sistema.tipo === 'oleoducto') return sistema.productos.includes('glp') ? tarifas.glp : tarifas.crudo;
+  if (sistema.tipo === 'gasoducto') {
+    if (sistema.transito_sit) return tarifas.gas_transito_sit;
+    return sistema.mercado === 'exportacion' ? tarifas.gas_exportacion : tarifas.gas_interno;
+  }
+  if (sistema.tipo === 'oleoducto') return contieneGlp(sistema.productos) ? tarifas.glp : tarifas.crudo;
   return tarifas.refinados;
 }
 
@@ -347,8 +393,8 @@ export function serieHistoricaSistema(sistema, tarifas) {
     for (let mes = 1; mes <= 12; mes++) {
       const años = anio - año0 + (mes - 1) / 12;
       let util = base * Math.pow(1 + tendencia, años) * estacionalidad(mes, sistema);
-      // Rampa de tránsito de gas desde 2025-04
-      if (sistema.tipo === 'gasoducto' && sistema.mercado === 'exportacion' && anio === 2025 && mes >= 4) {
+      // Rampa de gas en tránsito SIT (GSCY/GASYRG/GTB) desde 2025-04, DS 5206/2024
+      if (sistema.transito_sit && anio === 2025 && mes >= 4) {
         const mesesDesdeAbril = mes - 4;
         const rampaMmm3d = 1.5 + (4.5 - 1.5) * Math.min(mesesDesdeAbril / 6, 1);
         const capacidadMmm3d = sistema.unidad === 'MMpcd' ? sistema.capacidad / 35.3147 : sistema.capacidad;
@@ -372,7 +418,7 @@ export function serieHistoricaSistema(sistema, tarifas) {
 function factorMensualIngreso(unidad) {
   // aproximación mensual de los factores anuales de la sección 4.4 (÷12)
   if (unidad === 'MMpcd') return (365 * 1000) / 12;
-  if (unidad === 'MMm3/d') return (365 * 35.3147) / 12;
+  if (unidad === 'MMm3/d') return (365 * 35.3147 * 1000) / 12;
   return 365 / 12; // BPD -> bbl/mes aprox
 }
 
@@ -383,7 +429,10 @@ export function proyeccionSistema(sistema, tarifas, ultimaUtilPct) {
   const { tendencia } = UTIL_BASE[claveUtil(sistema)];
   const rng = mulberry32(sistema.id.split('-').reduce((a, c) => a + c.charCodeAt(0), 0) * 65537 + 7);
   const tarifa = tarifaSistema(sistema, tarifas);
-  const esGasTransito = sistema.tipo === 'gasoducto' && sistema.mercado === 'exportacion';
+  // GAA: recibe la rampa del macroproyecto Mayaya (2 -> 10 MMm3/d en 3 años desde 2028).
+  const esGAA = sistema.id === ID_GAA;
+  // GSCY/GASYRG/GTB: gas en tránsito SIT, consolidación a 8 MMm3/d hacia 2030.
+  const esSIT = Boolean(sistema.transito_sit);
 
   const escenarios = {};
   const configs = {
@@ -400,21 +449,20 @@ export function proyeccionSistema(sistema, tarifas, ultimaUtilPct) {
       for (let mes = 1; mes <= 12; mes++) {
         const años = anio - 2026 + (mes - 1) / 12;
         let util = utilInicial * Math.pow(1 + tendencia, años) * estacionalidad(mes, sistema);
-        // Macroproyecto de gas: rampa 2->10 MMm3/d según escenario
-        if (esGasTransito) {
+        const capacidadMmm3d = sistema.unidad === 'MMpcd' ? sistema.capacidad / 35.3147 : sistema.capacidad;
+        // Macroproyecto Mayaya (GAA): rampa 2 -> 10 MMm3/d en 3 años desde 2028 (por escenario)
+        if (esGAA) {
           const inicioMacro = new Date(cfg.anioMacro, 0, 1);
           const actual = new Date(anio, mes - 1, 1);
           const mesesDesdeInicio = (actual - inicioMacro) / (1000 * 60 * 60 * 24 * 30.44);
           if (mesesDesdeInicio >= 0) {
             const rampa = 2 + (10 - 2) * Math.min(mesesDesdeInicio / cfg.rampaMeses, 1);
-            const capacidadMmm3d = sistema.unidad === 'MMpcd' ? sistema.capacidad / 35.3147 : sistema.capacidad;
             util = Math.max(util, (rampa * cfg.factor) / capacidadMmm3d);
           }
-          // consolidación de otro sistema en 8 MMm3/d hacia 2030
-          if (anio >= 2030) {
-            const capacidadMmm3d = sistema.unidad === 'MMpcd' ? sistema.capacidad / 35.3147 : sistema.capacidad;
-            util = Math.max(util, (8 * cfg.factor * 0.5) / capacidadMmm3d);
-          }
+        }
+        // SIT (GSCY/GASYRG/GTB): consolidación de gas en tránsito a 8 MMm3/d hacia 2030
+        if (esSIT && anio >= 2030) {
+          util = Math.max(util, (8 * cfg.factor) / capacidadMmm3d);
         }
         util = util * cfg.factor;
         const ruido = 1 + (rng() * 2 - 1) * 0.03;

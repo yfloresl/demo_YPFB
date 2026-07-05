@@ -1,191 +1,78 @@
 {
-  "parametros_globales": {
-    "tasa_pct": 10,
-    "vida_anios": 25,
-    "opex_pct_capex": 3.5,
-    "capex_unitario_por_pulgada_km": {
-      "llano": 55000,
-      "selva": 82000,
-      "montania": 98000
-    },
+  "_nota": "Macroproyectos de inversión basados en anuncios públicos de YPFB Corporación (2024-2026) con supuestos financieros SIMULADOS. Los pozos y corredores de interconexión están en pozos.json; las estaciones en estaciones.json. CAPEX unitario referencial de ductos onshore: 45.000-85.000 USD por pulgada-km según terreno.",
+  "parametros_financieros": {
+    "tasa_descuento_pct": 10, "vida_util_anios": 25, "opex_anual_pct_capex": 3.5,
+    "capex_usd_por_pulgada_km": { "llano": 45000, "pie_de_monte": 62000, "montana_selva": 85000 },
     "factor_ruta": 1.25,
     "tarifas_referencia": {
-      "gas_exportacion": 3.8,
-      "gas_interno": 2.1,
-      "crudo": 62,
-      "glp": 58,
-      "refinados": 70
-    }
+      "gas_mercado_interno_usd_mpc": 0.41,
+      "gas_exportacion_usd_mpc": 0.30,
+      "gas_transito_sit_usd_mpc": 0.35,
+      "liquidos_usd_bbl": 1.65,
+      "refinados_poliducto_usd_bbl": 2.10
+    },
+    "nota_tarifas": "Tarifa estampilla mercado interno gas ~0,41 US$/MPC (referencia histórica ANH); GTB mercado interno entrega Chiquitos 0,1609 US$/MPC (gestión 2024). Demás valores simulados en rangos plausibles del sector."
   },
   "proyectos": [
-    {
-      "id": "PRY-01",
-      "nombre": "Ampliación Corredor Boomerang - Gas Norte",
-      "descripcion": "Interconexión de pozos del corredor Boomerang con ampliación de capacidad hacia el mercado interno de Santa Cruz y Cochabamba.",
+    { "id": "INV-MAYAYA", "nombre": "Ducto de evacuación Subandino Norte (Mayaya – Caranavi – Senkata)",
+      "tipo": "gasoducto nuevo + línea de líquidos", "corredor": "COR-NORTE",
+      "estado": "Fase 1 en obras civiles (Mayaya–Caranavi); troncal en evaluación",
+      "justificacion": "Descubrimiento Mayaya Centro-X1 (Alto Beni, La Paz): 1,7 TCF en estructura y ~5 estructuras aledañas (~7 TCF zonal). Producción temprana con planta relocalizada: hasta 10 MMm3/d de gas y 500-1.000 bbl/d de condensado 52° API. Ingresos de vida útil estimados por YPFB: USD 6.800 MM. Expertos independientes advierten reservas no certificadas y costo de troncal potencialmente mayor: reflejar con escenarios.",
       "fases": [
-        {
-          "anio": 2026,
-          "capex_mm_usd": 45
-        },
-        {
-          "anio": 2027,
-          "capex_mm_usd": 60
-        },
-        {
-          "anio": 2028,
-          "capex_mm_usd": 25
-        }
+        { "fase": 1, "tramo": "Mayaya – Caranavi", "longitud_km": 65, "diametro_pulg": 12, "terreno": "montana_selva", "capex_usd_mm": 66.3 },
+        { "fase": 2, "tramo": "Caranavi – Senkata (empalme GAA)", "longitud_km": 175, "diametro_pulg": 16, "terreno": "montana_selva", "capex_usd_mm": 238.0 },
+        { "fase": 3, "tramo": "Línea de líquidos a Sica Sica", "longitud_km": 190, "diametro_pulg": 6, "terreno": "montana_selva", "capex_usd_mm": 96.9 }
       ],
-      "capex_total_mm_usd": 130,
-      "escenarios_roi": {
-        "base": {
-          "van_mm_usd": 63.8,
-          "tir_pct": 15.6,
-          "payback_anios": 8
-        },
-        "conservador": {
-          "van_mm_usd": 9.4,
-          "tir_pct": 10.9,
-          "payback_anios": 10
-        },
-        "optimista": {
-          "van_mm_usd": 107.2,
-          "tir_pct": 19,
-          "payback_anios": 7
-        }
-      }
-    },
-    {
-      "id": "PRY-02",
-      "nombre": "Nuevo Ducto de Exportación GIJA-II",
-      "descripcion": "Segunda línea paralela al corredor de exportación hacia Argentina para sostener compromisos contractuales de gas.",
-      "fases": [
-        {
-          "anio": 2027,
-          "capex_mm_usd": 90
-        },
-        {
-          "anio": 2028,
-          "capex_mm_usd": 110
-        }
-      ],
-      "capex_total_mm_usd": 200,
-      "escenarios_roi": {
-        "base": {
-          "van_mm_usd": 279.6,
-          "tir_pct": 25.7,
-          "payback_anios": 5
-        },
-        "conservador": {
-          "van_mm_usd": 147.9,
-          "tir_pct": 18.8,
-          "payback_anios": 6
-        },
-        "optimista": {
-          "van_mm_usd": 384.9,
-          "tir_pct": 30.9,
-          "payback_anios": 4
-        }
-      }
-    },
-    {
-      "id": "PRY-03",
-      "nombre": "Interconexión Corredor Chaco - Pozos Profundos",
-      "descripcion": "Conexión de clusters de pozos en desarrollo del Chaco tarijeño a la red troncal GASYRG/GIJA.",
-      "fases": [
-        {
-          "anio": 2026,
-          "capex_mm_usd": 35
-        },
-        {
-          "anio": 2027,
-          "capex_mm_usd": 20
-        }
-      ],
-      "capex_total_mm_usd": 55,
-      "escenarios_roi": {
-        "base": {
-          "van_mm_usd": 52.5,
-          "tir_pct": 20.6,
-          "payback_anios": 6
-        },
-        "conservador": {
-          "van_mm_usd": 22.1,
-          "tir_pct": 14.8,
-          "payback_anios": 7
-        },
-        "optimista": {
-          "van_mm_usd": 76.8,
-          "tir_pct": 24.9,
-          "payback_anios": 5
-        }
-      }
-    },
-    {
-      "id": "PRY-04",
-      "nombre": "Modernización Poliductos del Altiplano",
-      "descripcion": "Rehabilitación y ampliación de capacidad de poliductos Cochabamba-Oruro-La Paz y Sica Sica-El Alto.",
-      "fases": [
-        {
-          "anio": 2026,
-          "capex_mm_usd": 18
-        },
-        {
-          "anio": 2027,
-          "capex_mm_usd": 22
-        }
-      ],
-      "capex_total_mm_usd": 40,
-      "escenarios_roi": {
-        "base": {
-          "van_mm_usd": 28.7,
-          "tir_pct": 18.5,
-          "payback_anios": 6
-        },
-        "conservador": {
-          "van_mm_usd": 9.2,
-          "tir_pct": 12.9,
-          "payback_anios": 8
-        },
-        "optimista": {
-          "van_mm_usd": 44.4,
-          "tir_pct": 22.7,
-          "payback_anios": 5
-        }
-      }
-    },
-    {
-      "id": "PRY-05",
-      "nombre": "Corredor Chuquisaca - Nueva Interconexión Rural",
-      "descripcion": "Extensión de red hacia clusters de pozos del corredor Chuquisaca con enfoque en abastecimiento interno.",
-      "fases": [
-        {
-          "anio": 2027,
-          "capex_mm_usd": 15
-        },
-        {
-          "anio": 2028,
-          "capex_mm_usd": 12
-        }
-      ],
-      "capex_total_mm_usd": 27,
-      "escenarios_roi": {
-        "base": {
-          "van_mm_usd": 22,
-          "tir_pct": 19.3,
-          "payback_anios": 6
-        },
-        "conservador": {
-          "van_mm_usd": 8.2,
-          "tir_pct": 13.7,
-          "payback_anios": 8
-        },
-        "optimista": {
-          "van_mm_usd": 33.2,
-          "tir_pct": 23.6,
-          "payback_anios": 5
-        }
-      }
-    }
+      "capex_total_usd_mm": 401.2, "volumen_diseno": { "gas_mmm3d": 10, "liquidos_bpd": 1000 },
+      "coords": [[-15.55,-67.20],[-15.83,-67.57],[-16.20,-67.90],[-16.54,-68.19]],
+      "escenarios_roi": [
+        { "escenario": "conservador", "utilizacion_pct": 40, "tir_pct": 8.2, "van_usd_mm": -38.5, "payback_anios": 14.8 },
+        { "escenario": "base", "utilizacion_pct": 65, "tir_pct": 13.6, "van_usd_mm": 112.4, "payback_anios": 9.6 },
+        { "escenario": "optimista", "utilizacion_pct": 85, "tir_pct": 18.9, "van_usd_mm": 246.7, "payback_anios": 7.1 }
+      ] },
+    { "id": "INV-REVERSA-OSSA2", "nombre": "Reversa OSSA-2 (Arica – Charaña – Oruro – Santa Cruz)",
+      "tipo": "reversión de flujo de oleoducto existente", "corredor": null,
+      "estado": "Etapa Oruro–Santa Cruz concluida; etapa Arica–Charaña en gestión binacional (USD 9,8 MM 2026 en Terminal Arica)",
+      "justificacion": "Importación de combustibles por ducto en vez de cisternas: menor costo logístico y mayor seguridad de suministro. Reversión habilitada: 9.000 BPD Oruro→Cbba y 8.000 BPD Cbba→SCZ.",
+      "capex_total_usd_mm": 58.0, "volumen_diseno": { "liquidos_bpd": 18000 },
+      "coords": [[-18.47,-70.31],[-17.59,-69.47],[-17.33,-67.75],[-17.97,-67.11],[-17.39,-66.16],[-17.78,-63.18]],
+      "escenarios_roi": [
+        { "escenario": "conservador", "utilizacion_pct": 50, "tir_pct": 11.4, "van_usd_mm": 12.8, "payback_anios": 8.9 },
+        { "escenario": "base", "utilizacion_pct": 75, "tir_pct": 19.3, "van_usd_mm": 61.5, "payback_anios": 5.4 },
+        { "escenario": "optimista", "utilizacion_pct": 90, "tir_pct": 24.7, "van_usd_mm": 98.2, "payback_anios": 4.2 }
+      ] },
+    { "id": "INV-SIT", "nombre": "Expansión Sistema Integrado de Transporte (gas en tránsito Argentina→Brasil)",
+      "tipo": "compresión adicional + adecuaciones GSCY/GASYRG/GTB", "corredor": null,
+      "estado": "Operativo desde abril 2025 (pruebas hasta 4,5 MMm3/d); expansión en evaluación",
+      "justificacion": "Bolivia como hub del gas de Vaca Muerta hacia Brasil usando capacidad ociosa de exportación. Ingresos por tarifa de tránsito sin reservas propias. YPFB actúa como Agregador y Transportador Internacional (DS 5206/2024).",
+      "capex_total_usd_mm": 35.0, "volumen_diseno": { "gas_mmm3d": 10 },
+      "coords": [[-22.02,-63.68],[-20.05,-63.52],[-17.83,-62.98],[-18.33,-59.76],[-18.98,-57.80]],
+      "escenarios_roi": [
+        { "escenario": "conservador", "utilizacion_pct": 30, "tir_pct": 9.8, "van_usd_mm": -1.2, "payback_anios": 11.5 },
+        { "escenario": "base", "utilizacion_pct": 55, "tir_pct": 21.6, "van_usd_mm": 48.9, "payback_anios": 4.8 },
+        { "escenario": "optimista", "utilizacion_pct": 80, "tir_pct": 33.4, "van_usd_mm": 104.6, "payback_anios": 3.2 }
+      ] },
+    { "id": "INV-PCS-AMPL", "nombre": "Ampliación Poliducto Camiri–Sucre (conversión línea 6\" GTS)",
+      "tipo": "conversión y ampliación de poliducto", "corredor": null,
+      "estado": "En ejecución",
+      "justificacion": "Duplicar capacidad de refinados hacia Sucre y Potosí (gasolina, diésel, GLP, kerosene) reduciendo transporte en cisternas. Monteagudo opera al 92% (cuello de botella).",
+      "capex_total_usd_mm": 22.0, "volumen_diseno": { "liquidos_bpd": 7000 },
+      "coords": [[-20.05,-63.52],[-19.40,-64.60],[-19.05,-65.26]],
+      "escenarios_roi": [
+        { "escenario": "conservador", "utilizacion_pct": 55, "tir_pct": 12.1, "van_usd_mm": 4.6, "payback_anios": 8.1 },
+        { "escenario": "base", "utilizacion_pct": 75, "tir_pct": 17.8, "van_usd_mm": 18.3, "payback_anios": 5.7 },
+        { "escenario": "optimista", "utilizacion_pct": 90, "tir_pct": 22.5, "van_usd_mm": 29.7, "payback_anios": 4.6 }
+      ] },
+    { "id": "INV-INTERCONEXION-PRU", "nombre": "Programa de interconexión de pozos del Plan de Reactivación del Upstream",
+      "tipo": "líneas de recolección y ductos de interconexión (cartera)", "corredor": "COR-BOOMERANG / COR-CHUQUISACA / COR-CHACO / COR-NORTE",
+      "estado": "Cartera en evaluación (simulada sobre los 40 pozos/clusters anunciados públicamente; ver pozos.json)",
+      "justificacion": "El PRU contempla 57 pozos exploratorios y estratigráficos más desarrollos de subsidiarias. Cada pozo exitoso sin evacuación plena requiere línea de interconexión a la red troncal. El programa agrega la cartera por corredores y la prioriza por USD MM por MMpcd incorporado.",
+      "capex_total_usd_mm": 420.5, "volumen_diseno": { "gas_mmpcd_incorporado": 380, "liquidos_bpd_incorporado": 4300 },
+      "coords": [],
+      "escenarios_roi": [
+        { "escenario": "conservador", "tir_pct": 10.5, "van_usd_mm": 3.1, "payback_anios": 9.8 },
+        { "escenario": "base", "tir_pct": 16.2, "van_usd_mm": 42.7, "payback_anios": 6.3 },
+        { "escenario": "optimista", "tir_pct": 21.9, "van_usd_mm": 88.4, "payback_anios": 4.9 }
+      ] }
   ]
 }

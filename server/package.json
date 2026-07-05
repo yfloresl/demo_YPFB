@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node --watch index.js",
     "start": "node index.js",
-    "gen:data": "node scripts/generar_datos.js"
+    "gen:data:historico": "node scripts/generar_datos.js"
   },
   "dependencies": {
     "compression": "^1.7.4",

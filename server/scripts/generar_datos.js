@@ -1,17 +1,24 @@
 #!/usr/bin/env node
 /**
- * Generador determinístico de datos de referencia para DuctoVision Bolivia.
+ * SCRIPT HISTÓRICO — YA NO SE USA PARA GENERAR server/data/*.json.
  *
- * IMPORTANTE: No existen datos reales disponibles en este proyecto (el
- * dataset original nunca llegó al repositorio). Este script genera datos
- * de REFERENCIA con nombres plausibles inspirados en la red real de
- * transporte de hidrocarburos de Bolivia (GASYRG, GTB, GIJA, OCSA, etc.)
- * pero los números, trazados y series son SIMULADOS con un PRNG
- * determinístico (mulberry32, semilla 20260704). No representan
- * información oficial de YPFB Transporte S.A.
+ * server/data/{sistemas,estaciones,pozos,proyectos_inversion}.json contienen
+ * ahora el dataset REAL/referencial de fuentes públicas sobre YPFB Transporte
+ * (ver el campo `_nota` de cada JSON y `server/services/datos.js`). NO
+ * ejecutes este script pensando que refresca esos archivos: los
+ * sobrescribiría con datos simulados y perderías el dataset real.
  *
- * Ejecutar: node server/scripts/generar_datos.js
- * Salida: server/data/{sistemas,estaciones,pozos,proyectos_inversion}.json
+ * Se conserva únicamente como referencia histórica de cómo se generaban
+ * datos de referencia plausibles (PRNG mulberry32, semilla 20260704) cuando
+ * el dataset real todavía no había llegado al repositorio. La técnica de
+ * generación determinística de sub-scores de estaciones sigue siendo
+ * relevante: esa misma lógica (adaptada a los 5 criterios y pesos reales de
+ * estaciones.json) vive ahora en `server/services/engine.js` ->
+ * `subScoresDeterministicos`, usada para las 43 estaciones sin score
+ * curado.
+ *
+ * Ejecución original: node server/scripts/generar_datos.js
+ * Salida original: server/data/{sistemas,estaciones,pozos,proyectos_inversion}.json
  */
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';

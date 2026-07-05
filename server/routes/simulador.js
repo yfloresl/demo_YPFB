@@ -9,7 +9,7 @@ import {
   scoreEstacion,
   recomendacionScore,
 } from '../services/engine.js';
-import { parametros_globales, sistemaPorId } from '../services/datos.js';
+import { parametros_globales, sistemaPorId, pesos_score } from '../services/datos.js';
 import { estacionesPorId } from '../services/estado.js';
 
 const router = Router();
@@ -156,7 +156,7 @@ router.post('/estacion-standby', (req, res) => {
     const ahorro_opex_usd = capexEquivalente * 0.022;
 
     const nuevoSubScores = { ...e.sub_scores, criticidad: Math.max(0, e.sub_scores.criticidad - reduccion * 0.4) };
-    const nuevoScore = scoreEstacion(nuevoSubScores, req.pesos_score || { integridad: 0.3, eficiencia: 0.25, criticidad: 0.25, mantenimiento: 0.2 });
+    const nuevoScore = scoreEstacion(nuevoSubScores, pesos_score);
 
     res.json({
       estacion_id,
