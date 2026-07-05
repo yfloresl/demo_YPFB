@@ -1,0 +1,18 @@
+{
+  "name": "ductovision-bolivia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DuctoVision Bolivia - plataforma demo de visualizacion y simulacion de la red de ductos de YPFB Transporte",
+  "scripts": {
+    "dev": "concurrently -k -n SERVER,CLIENT -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm install --prefix client && npm install --prefix server && npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "gen:data": "node server/scripts/generar_datos.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}

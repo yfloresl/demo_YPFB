@@ -1,0 +1,928 @@
+{
+  "pozos": [
+    {
+      "id": "POZ-001",
+      "nombre": "Margarita Sur",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 41.29,
+        "liquidos_bpd": 1243
+      },
+      "coords": [
+        -17.972,
+        -62.7235
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 42.5,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 40.8,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-002",
+      "nombre": "Itaú Profundo",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 18.4,
+        "liquidos_bpd": 579
+      },
+      "coords": [
+        -17.3973,
+        -64.8813
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 62.3,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 59.81,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-003",
+      "nombre": "Huacaya",
+      "operador": "YPFB Corporación",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 27.5,
+        "liquidos_bpd": 431
+      },
+      "coords": [
+        -18.6619,
+        -62.606
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 11.9,
+      "diametro_sugerido_pulg": 4,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 2.43,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-004",
+      "nombre": "Incahuasi Norte",
+      "operador": "YPFB Chaco",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 43.36,
+        "liquidos_bpd": 1530
+      },
+      "coords": [
+        -21.951,
+        -63.6098
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 40.8,
+      "diametro_sugerido_pulg": 8,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 25.46,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-005",
+      "nombre": "Aquio",
+      "operador": "Shell Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 36.14,
+        "liquidos_bpd": 872
+      },
+      "coords": [
+        -14.1788,
+        -66.5942
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 67.3,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 31.5,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-006",
+      "nombre": "San Alberto Este",
+      "operador": "YPFB Chaco",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 27.28,
+        "liquidos_bpd": 2540
+      },
+      "coords": [
+        -22.1279,
+        -63.0932
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 42.3,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 48.73,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-007",
+      "nombre": "Ipati",
+      "operador": "YPFB Corporación",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 12.44,
+        "liquidos_bpd": 930
+      },
+      "coords": [
+        -21.5687,
+        -64.2533
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 78.2,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 45.04,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-008",
+      "nombre": "Boyuy-X2",
+      "operador": "YPFB Chaco",
+      "categoria": "negativo",
+      "tipo_hidrocarburo": "seco",
+      "produccion_potencial": {
+        "gas_mmpcd": 0,
+        "liquidos_bpd": 0
+      },
+      "coords": [
+        -19.2988,
+        -65.2257
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 52.3,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 50.21,
+      "prioridad": 3,
+      "nota": "Caso de riesgo exploratorio (referencia pública del sector: pozo con resultados no comerciales / abandono). Datos de producción y CAPEX no aplicables."
+    },
+    {
+      "id": "POZ-009",
+      "nombre": "Vuelta Grande Este",
+      "operador": "YPFB Chaco",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 28.26,
+        "liquidos_bpd": 1240
+      },
+      "coords": [
+        -13.4216,
+        -68.1825
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 20.1,
+      "diametro_sugerido_pulg": 8,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 12.54,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-010",
+      "nombre": "Yarará",
+      "operador": "YPFB Chaco",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 20.78,
+        "liquidos_bpd": 1988
+      },
+      "coords": [
+        -20.6616,
+        -64.1563
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 77.1,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 72.17,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-011",
+      "nombre": "Sararenda",
+      "operador": "YPFB Andina",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 4.96,
+        "liquidos_bpd": 1920
+      },
+      "coords": [
+        -19.0457,
+        -64.9353
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 69.4,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 39.97,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-012",
+      "nombre": "Iñau",
+      "operador": "Petrobras Bolivia",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 8.66,
+        "liquidos_bpd": 1940
+      },
+      "coords": [
+        -17.5034,
+        -63.9243
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 76.1,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 23.29,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-013",
+      "nombre": "Carohuaicho",
+      "operador": "YPFB Andina",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 1.02,
+        "liquidos_bpd": 1395
+      },
+      "coords": [
+        -14.8199,
+        -66.6381
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 29.4,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 13.76,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-014",
+      "nombre": "Curichera",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 32.8,
+        "liquidos_bpd": 1756
+      },
+      "coords": [
+        -13.8998,
+        -66.9443
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 82,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 76.75,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-015",
+      "nombre": "Timboy",
+      "operador": "Shell Bolivia",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 7.34,
+        "liquidos_bpd": 159
+      },
+      "coords": [
+        -18.3786,
+        -64.7207
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 36.9,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 35.42,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-016",
+      "nombre": "Los Suris",
+      "operador": "Shell Bolivia",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "gas_liquidos",
+      "produccion_potencial": {
+        "gas_mmpcd": 2.16,
+        "liquidos_bpd": 1287
+      },
+      "coords": [
+        -16.8656,
+        -62.9799
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 34.5,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 17.59,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-017",
+      "nombre": "Dorado Este",
+      "operador": "YPFB Chaco",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 23.89,
+        "liquidos_bpd": 3049
+      },
+      "coords": [
+        -18.3493,
+        -63.0584
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 82.6,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 77.31,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-018",
+      "nombre": "Junín",
+      "operador": "YPFB Chaco",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 34.72,
+        "liquidos_bpd": 2405
+      },
+      "coords": [
+        -22.9932,
+        -64.1198
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 64,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 49.92,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-019",
+      "nombre": "Yapacaní Norte",
+      "operador": "YPFB Chaco",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 39.75,
+        "liquidos_bpd": 1342
+      },
+      "coords": [
+        -18.5894,
+        -64.064
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 28.1,
+      "diametro_sugerido_pulg": 8,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 17.53,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-020",
+      "nombre": "Río Beni",
+      "operador": "Petrobras Bolivia",
+      "categoria": "descubrimiento",
+      "tipo_hidrocarburo": "gas_liquidos",
+      "produccion_potencial": {
+        "gas_mmpcd": 17.89,
+        "liquidos_bpd": 1171
+      },
+      "coords": [
+        -19.5607,
+        -63.1523
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 19.5,
+      "diametro_sugerido_pulg": 8,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 14.98,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-021",
+      "nombre": "Cascabel",
+      "operador": "Shell Bolivia",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 29.15,
+        "liquidos_bpd": 3129
+      },
+      "coords": [
+        -13.3526,
+        -68.4041
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 43.8,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 20.5,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-022",
+      "nombre": "Madidi Sur",
+      "operador": "YPFB Chaco",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 23.8,
+        "liquidos_bpd": 1202
+      },
+      "coords": [
+        -19.3564,
+        -63.2875
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 22,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 21.12,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-023",
+      "nombre": "Chispani",
+      "operador": "YPFB Chaco",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 33.01,
+        "liquidos_bpd": 281
+      },
+      "coords": [
+        -20.7263,
+        -65.4381
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 16.8,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 15.72,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-024",
+      "nombre": "Astillero",
+      "operador": "Petrobras Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 25.48,
+        "liquidos_bpd": 2335
+      },
+      "coords": [
+        -14.5678,
+        -66.1946
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 26.9,
+      "diametro_sugerido_pulg": 4,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 10.33,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-025",
+      "nombre": "Tacobo Profundo",
+      "operador": "YPFB Andina",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 44.84,
+        "liquidos_bpd": 1542
+      },
+      "coords": [
+        -13.804,
+        -66.8083
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 58.8,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 29.99,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-026",
+      "nombre": "Charagua",
+      "operador": "YPFB Andina",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 29.67,
+        "liquidos_bpd": 2061
+      },
+      "coords": [
+        -15.4648,
+        -66.6106
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 18.9,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 9.64,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-027",
+      "nombre": "Ñupuco",
+      "operador": "Shell Bolivia",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 11.74,
+        "liquidos_bpd": 1064
+      },
+      "coords": [
+        -19.4242,
+        -64.4518
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 32.6,
+      "diametro_sugerido_pulg": 4,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 12.52,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-028",
+      "nombre": "Tajibo",
+      "operador": "Shell Bolivia",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "gas_liquidos",
+      "produccion_potencial": {
+        "gas_mmpcd": 43.66,
+        "liquidos_bpd": 1088
+      },
+      "coords": [
+        -18.8012,
+        -64.376
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 75.3,
+      "diametro_sugerido_pulg": 8,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 30.72,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-029",
+      "nombre": "Sipotindi",
+      "operador": "Petrobras Bolivia",
+      "categoria": "descubrimiento",
+      "tipo_hidrocarburo": "gas_liquidos",
+      "produccion_potencial": {
+        "gas_mmpcd": 5.01,
+        "liquidos_bpd": 1021
+      },
+      "coords": [
+        -17.7222,
+        -62.7799
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 36.6,
+      "diametro_sugerido_pulg": 4,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 11.42,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-030",
+      "nombre": "Caigua Norte",
+      "operador": "Petrobras Bolivia",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 36.33,
+        "liquidos_bpd": 2298
+      },
+      "coords": [
+        -18.5431,
+        -65.0324
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 23.2,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 22.27,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-031",
+      "nombre": "Camatindi",
+      "operador": "Shell Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 12.22,
+        "liquidos_bpd": 965
+      },
+      "coords": [
+        -18.1683,
+        -64.6184
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 67.9,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 78.22,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-032",
+      "nombre": "Ovai",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "descubrimiento",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 38.25,
+        "liquidos_bpd": 503
+      },
+      "coords": [
+        -18.1104,
+        -62.9375
+      ],
+      "corredor": "Boomerang",
+      "distancia_km_red": 48.8,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 46.85,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-033",
+      "nombre": "Percheles",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 19.99,
+        "liquidos_bpd": 935
+      },
+      "coords": [
+        -18.7958,
+        -64.8741
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 17,
+      "diametro_sugerido_pulg": 4,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 3.47,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-034",
+      "nombre": "Estancia Vieja",
+      "operador": "YPFB Corporación",
+      "categoria": "descubrimiento",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 10.88,
+        "liquidos_bpd": 954
+      },
+      "coords": [
+        -14.3056,
+        -68.4545
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 37.2,
+      "diametro_sugerido_pulg": 12,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 22.77,
+      "prioridad": 2
+    },
+    {
+      "id": "POZ-035",
+      "nombre": "Tundy",
+      "operador": "YPFB Corporación",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 22.41,
+        "liquidos_bpd": 348
+      },
+      "coords": [
+        -22.5683,
+        -63.6324
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 69,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 21.11,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-036",
+      "nombre": "Vera",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "programado",
+      "tipo_hidrocarburo": "gas_liquidos",
+      "produccion_potencial": {
+        "gas_mmpcd": 26.54,
+        "liquidos_bpd": 2832
+      },
+      "coords": [
+        -22.0188,
+        -64.6858
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 19.4,
+      "diametro_sugerido_pulg": 4,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 6.05,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-037",
+      "nombre": "Yuquimbia",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 6.42,
+        "liquidos_bpd": 1731
+      },
+      "coords": [
+        -20.6122,
+        -64.3115
+      ],
+      "corredor": "Chuquisaca",
+      "distancia_km_red": 70.9,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "selva",
+      "capex_interconexion_mm_usd": 33.18,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-038",
+      "nombre": "Ñacaroca",
+      "operador": "Repsol E&P Bolivia",
+      "categoria": "estratigrafico",
+      "tipo_hidrocarburo": "petroleo",
+      "produccion_potencial": {
+        "gas_mmpcd": 18.41,
+        "liquidos_bpd": 1961
+      },
+      "coords": [
+        -13.613,
+        -68.5677
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 44.2,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "montania",
+      "capex_interconexion_mm_usd": 42.43,
+      "prioridad": 1
+    },
+    {
+      "id": "POZ-039",
+      "nombre": "Guairuy",
+      "operador": "YPFB Andina",
+      "categoria": "perforacion",
+      "tipo_hidrocarburo": "gas",
+      "produccion_potencial": {
+        "gas_mmpcd": 18.37,
+        "liquidos_bpd": 232
+      },
+      "coords": [
+        -14.0592,
+        -67.2262
+      ],
+      "corredor": "Norte",
+      "distancia_km_red": 64.1,
+      "diametro_sugerido_pulg": 10,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 32.69,
+      "prioridad": 3
+    },
+    {
+      "id": "POZ-040",
+      "nombre": "Iñiguazu",
+      "operador": "Petrobras Bolivia",
+      "categoria": "desarrollo",
+      "tipo_hidrocarburo": "condensado",
+      "produccion_potencial": {
+        "gas_mmpcd": 29.65,
+        "liquidos_bpd": 100
+      },
+      "coords": [
+        -22.3007,
+        -63.2928
+      ],
+      "corredor": "Chaco",
+      "distancia_km_red": 55.2,
+      "diametro_sugerido_pulg": 6,
+      "terreno": "llano",
+      "capex_interconexion_mm_usd": 16.89,
+      "prioridad": 2
+    }
+  ],
+  "corredores": [
+    {
+      "id": "COR-01",
+      "nombre": "Corredor Norte",
+      "deptos": [
+        "La Paz",
+        "Beni",
+        "Pando"
+      ],
+      "pozos_ids": [
+        "POZ-005",
+        "POZ-009",
+        "POZ-013",
+        "POZ-014",
+        "POZ-021",
+        "POZ-024",
+        "POZ-025",
+        "POZ-026",
+        "POZ-034",
+        "POZ-038",
+        "POZ-039"
+      ]
+    },
+    {
+      "id": "COR-02",
+      "nombre": "Corredor Boomerang",
+      "deptos": [
+        "Santa Cruz",
+        "Cochabamba"
+      ],
+      "pozos_ids": [
+        "POZ-001",
+        "POZ-002",
+        "POZ-003",
+        "POZ-011",
+        "POZ-012",
+        "POZ-016",
+        "POZ-029",
+        "POZ-031",
+        "POZ-032"
+      ]
+    },
+    {
+      "id": "COR-03",
+      "nombre": "Corredor Chuquisaca",
+      "deptos": [
+        "Chuquisaca",
+        "Potosí"
+      ],
+      "pozos_ids": [
+        "POZ-008",
+        "POZ-015",
+        "POZ-017",
+        "POZ-019",
+        "POZ-020",
+        "POZ-022",
+        "POZ-023",
+        "POZ-027",
+        "POZ-028",
+        "POZ-030",
+        "POZ-033",
+        "POZ-037"
+      ]
+    },
+    {
+      "id": "COR-04",
+      "nombre": "Corredor Chaco",
+      "deptos": [
+        "Tarija",
+        "Santa Cruz"
+      ],
+      "pozos_ids": [
+        "POZ-004",
+        "POZ-006",
+        "POZ-007",
+        "POZ-010",
+        "POZ-018",
+        "POZ-035",
+        "POZ-036",
+        "POZ-040"
+      ]
+    }
+  ]
+}

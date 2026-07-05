@@ -1,0 +1,191 @@
+{
+  "parametros_globales": {
+    "tasa_pct": 10,
+    "vida_anios": 25,
+    "opex_pct_capex": 3.5,
+    "capex_unitario_por_pulgada_km": {
+      "llano": 55000,
+      "selva": 82000,
+      "montania": 98000
+    },
+    "factor_ruta": 1.25,
+    "tarifas_referencia": {
+      "gas_exportacion": 3.8,
+      "gas_interno": 2.1,
+      "crudo": 62,
+      "glp": 58,
+      "refinados": 70
+    }
+  },
+  "proyectos": [
+    {
+      "id": "PRY-01",
+      "nombre": "Ampliación Corredor Boomerang - Gas Norte",
+      "descripcion": "Interconexión de pozos del corredor Boomerang con ampliación de capacidad hacia el mercado interno de Santa Cruz y Cochabamba.",
+      "fases": [
+        {
+          "anio": 2026,
+          "capex_mm_usd": 45
+        },
+        {
+          "anio": 2027,
+          "capex_mm_usd": 60
+        },
+        {
+          "anio": 2028,
+          "capex_mm_usd": 25
+        }
+      ],
+      "capex_total_mm_usd": 130,
+      "escenarios_roi": {
+        "base": {
+          "van_mm_usd": 63.8,
+          "tir_pct": 15.6,
+          "payback_anios": 8
+        },
+        "conservador": {
+          "van_mm_usd": 9.4,
+          "tir_pct": 10.9,
+          "payback_anios": 10
+        },
+        "optimista": {
+          "van_mm_usd": 107.2,
+          "tir_pct": 19,
+          "payback_anios": 7
+        }
+      }
+    },
+    {
+      "id": "PRY-02",
+      "nombre": "Nuevo Ducto de Exportación GIJA-II",
+      "descripcion": "Segunda línea paralela al corredor de exportación hacia Argentina para sostener compromisos contractuales de gas.",
+      "fases": [
+        {
+          "anio": 2027,
+          "capex_mm_usd": 90
+        },
+        {
+          "anio": 2028,
+          "capex_mm_usd": 110
+        }
+      ],
+      "capex_total_mm_usd": 200,
+      "escenarios_roi": {
+        "base": {
+          "van_mm_usd": 279.6,
+          "tir_pct": 25.7,
+          "payback_anios": 5
+        },
+        "conservador": {
+          "van_mm_usd": 147.9,
+          "tir_pct": 18.8,
+          "payback_anios": 6
+        },
+        "optimista": {
+          "van_mm_usd": 384.9,
+          "tir_pct": 30.9,
+          "payback_anios": 4
+        }
+      }
+    },
+    {
+      "id": "PRY-03",
+      "nombre": "Interconexión Corredor Chaco - Pozos Profundos",
+      "descripcion": "Conexión de clusters de pozos en desarrollo del Chaco tarijeño a la red troncal GASYRG/GIJA.",
+      "fases": [
+        {
+          "anio": 2026,
+          "capex_mm_usd": 35
+        },
+        {
+          "anio": 2027,
+          "capex_mm_usd": 20
+        }
+      ],
+      "capex_total_mm_usd": 55,
+      "escenarios_roi": {
+        "base": {
+          "van_mm_usd": 52.5,
+          "tir_pct": 20.6,
+          "payback_anios": 6
+        },
+        "conservador": {
+          "van_mm_usd": 22.1,
+          "tir_pct": 14.8,
+          "payback_anios": 7
+        },
+        "optimista": {
+          "van_mm_usd": 76.8,
+          "tir_pct": 24.9,
+          "payback_anios": 5
+        }
+      }
+    },
+    {
+      "id": "PRY-04",
+      "nombre": "Modernización Poliductos del Altiplano",
+      "descripcion": "Rehabilitación y ampliación de capacidad de poliductos Cochabamba-Oruro-La Paz y Sica Sica-El Alto.",
+      "fases": [
+        {
+          "anio": 2026,
+          "capex_mm_usd": 18
+        },
+        {
+          "anio": 2027,
+          "capex_mm_usd": 22
+        }
+      ],
+      "capex_total_mm_usd": 40,
+      "escenarios_roi": {
+        "base": {
+          "van_mm_usd": 28.7,
+          "tir_pct": 18.5,
+          "payback_anios": 6
+        },
+        "conservador": {
+          "van_mm_usd": 9.2,
+          "tir_pct": 12.9,
+          "payback_anios": 8
+        },
+        "optimista": {
+          "van_mm_usd": 44.4,
+          "tir_pct": 22.7,
+          "payback_anios": 5
+        }
+      }
+    },
+    {
+      "id": "PRY-05",
+      "nombre": "Corredor Chuquisaca - Nueva Interconexión Rural",
+      "descripcion": "Extensión de red hacia clusters de pozos del corredor Chuquisaca con enfoque en abastecimiento interno.",
+      "fases": [
+        {
+          "anio": 2027,
+          "capex_mm_usd": 15
+        },
+        {
+          "anio": 2028,
+          "capex_mm_usd": 12
+        }
+      ],
+      "capex_total_mm_usd": 27,
+      "escenarios_roi": {
+        "base": {
+          "van_mm_usd": 22,
+          "tir_pct": 19.3,
+          "payback_anios": 6
+        },
+        "conservador": {
+          "van_mm_usd": 8.2,
+          "tir_pct": 13.7,
+          "payback_anios": 8
+        },
+        "optimista": {
+          "van_mm_usd": 33.2,
+          "tir_pct": 23.6,
+          "payback_anios": 5
+        }
+      }
+    }
+  ]
+}

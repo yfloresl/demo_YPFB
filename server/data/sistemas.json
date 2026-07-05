@@ -1,0 +1,1159 @@
+[
+  {
+    "id": "SIS-001",
+    "codigo": "GASYRG",
+    "nombre": "Gasoducto Yacuiba - Río Grande",
+    "tipo": "gasoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Yacuiba - Río Grande",
+    "longitud_km": 414.7,
+    "diametro_pulg": 32,
+    "capacidad": 204.7,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 1993,
+    "estado": "operativo",
+    "coords": [
+      [
+        -22.02,
+        -63.65
+      ],
+      [
+        -20.2407,
+        -63.5999
+      ],
+      [
+        -18.3,
+        -63.4
+      ]
+    ]
+  },
+  {
+    "id": "SIS-002",
+    "codigo": "GTB",
+    "nombre": "Gasoducto Bolivia-Brasil (tramo boliviano)",
+    "tipo": "gasoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Río Grande - San Matías (frontera Brasil)",
+    "longitud_km": 572.8,
+    "diametro_pulg": 32,
+    "capacidad": 194.9,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 1999,
+    "estado": "operativo",
+    "coords": [
+      [
+        -18.3,
+        -63.4
+      ],
+      [
+        -17.1694,
+        -60.6595
+      ],
+      [
+        -16.37,
+        -58.4
+      ]
+    ]
+  },
+  {
+    "id": "SIS-003",
+    "codigo": "GIJA",
+    "nombre": "Gasoducto de Integración Juana Azurduy",
+    "tipo": "gasoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Campo Margarita - Yacuiba",
+    "longitud_km": 112.6,
+    "diametro_pulg": 24,
+    "capacidad": 102.9,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2010,
+    "estado": "operativo",
+    "coords": [
+      [
+        -21.7,
+        -63.4
+      ],
+      [
+        -21.9612,
+        -63.5722
+      ],
+      [
+        -21.8359,
+        -63.6827
+      ],
+      [
+        -21.7661,
+        -63.4477
+      ],
+      [
+        -22.02,
+        -63.65
+      ]
+    ]
+  },
+  {
+    "id": "SIS-004",
+    "codigo": "GCC",
+    "nombre": "Gasoducto Carrasco - Cochabamba",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Colpa-Caigua - Cochabamba",
+    "longitud_km": 444.3,
+    "diametro_pulg": 16,
+    "capacidad": 66,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 1996,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.3,
+        -63.3
+      ],
+      [
+        -19.4782,
+        -64.089
+      ],
+      [
+        -18.6537,
+        -64.7882
+      ],
+      [
+        -18.128,
+        -65.545
+      ],
+      [
+        -17.39,
+        -66.16
+      ]
+    ]
+  },
+  {
+    "id": "SIS-005",
+    "codigo": "GVT",
+    "nombre": "Gasoducto Villamontes - Tarija",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Villamontes - Tarija",
+    "longitud_km": 146.4,
+    "diametro_pulg": 10,
+    "capacidad": 60.9,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2001,
+    "estado": "operativo",
+    "coords": [
+      [
+        -21.26,
+        -63.44
+      ],
+      [
+        -21.543,
+        -63.7611
+      ],
+      [
+        -21.4992,
+        -64.4325
+      ],
+      [
+        -21.53,
+        -64.73
+      ]
+    ]
+  },
+  {
+    "id": "SIS-006",
+    "codigo": "GYSC",
+    "nombre": "Gasoducto Yapacaní - Santa Cruz",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Yapacaní - Santa Cruz de la Sierra",
+    "longitud_km": 142.4,
+    "diametro_pulg": 12,
+    "capacidad": 80,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2004,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.4,
+        -64.3
+      ],
+      [
+        -17.8305,
+        -63.9521
+      ],
+      [
+        -17.78,
+        -63.18
+      ]
+    ]
+  },
+  {
+    "id": "SIS-007",
+    "codigo": "GSUR",
+    "nombre": "Gasoducto Sur (Yacuiba - Villamontes)",
+    "tipo": "gasoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Yacuiba - Villamontes",
+    "longitud_km": 87.3,
+    "diametro_pulg": 20,
+    "capacidad": 139.2,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 1998,
+    "estado": "operativo",
+    "coords": [
+      [
+        -22.02,
+        -63.65
+      ],
+      [
+        -21.8695,
+        -63.598
+      ],
+      [
+        -21.26,
+        -63.44
+      ]
+    ]
+  },
+  {
+    "id": "SIS-008",
+    "codigo": "GAOR",
+    "nombre": "Gasoducto Al Oriente",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Camiri - Santa Cruz de la Sierra",
+    "longitud_km": 258.4,
+    "diametro_pulg": 12,
+    "capacidad": 82.9,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2006,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.05,
+        -63.52
+      ],
+      [
+        -19.3042,
+        -63.2156
+      ],
+      [
+        -18.4082,
+        -63.209
+      ],
+      [
+        -17.78,
+        -63.18
+      ]
+    ]
+  },
+  {
+    "id": "SIS-009",
+    "codigo": "GRGY",
+    "nombre": "Gasoducto Río Grande - Yapacaní",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Río Grande - Yapacaní",
+    "longitud_km": 140.5,
+    "diametro_pulg": 10,
+    "capacidad": 49,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2008,
+    "estado": "operativo",
+    "coords": [
+      [
+        -18.3,
+        -63.4
+      ],
+      [
+        -17.9228,
+        -63.9466
+      ],
+      [
+        -17.4,
+        -64.3
+      ]
+    ]
+  },
+  {
+    "id": "SIS-010",
+    "codigo": "RCC",
+    "nombre": "Ramal Camiri - Choreti",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Camiri - Choreti",
+    "longitud_km": 125.4,
+    "diametro_pulg": 8,
+    "capacidad": 53.4,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 1995,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.05,
+        -63.52
+      ],
+      [
+        -19.9084,
+        -63.7117
+      ],
+      [
+        -19.7624,
+        -63.2506
+      ],
+      [
+        -19.47,
+        -63.2262
+      ],
+      [
+        -19.6,
+        -63.3
+      ]
+    ]
+  },
+  {
+    "id": "SIS-011",
+    "codigo": "GNOR",
+    "nombre": "Gasoducto Norte (La Paz - El Alto)",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "La Paz - El Alto",
+    "longitud_km": 40.6,
+    "diametro_pulg": 8,
+    "capacidad": 51.8,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2000,
+    "estado": "operativo",
+    "coords": [
+      [
+        -16.5,
+        -68.15
+      ],
+      [
+        -16.3806,
+        -68.318
+      ],
+      [
+        -16.5,
+        -68.2
+      ]
+    ]
+  },
+  {
+    "id": "SIS-012",
+    "codigo": "RCO",
+    "nombre": "Ramal Cochabamba - Oruro",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Cochabamba - Oruro",
+    "longitud_km": 140.9,
+    "diametro_pulg": 10,
+    "capacidad": 48.5,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2003,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.39,
+        -66.16
+      ],
+      [
+        -17.5689,
+        -66.7045
+      ],
+      [
+        -17.5465,
+        -66.9656
+      ],
+      [
+        -17.98,
+        -67.15
+      ]
+    ]
+  },
+  {
+    "id": "SIS-013",
+    "codigo": "GCT",
+    "nombre": "Gasoducto Colpa - Tacobo",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Colpa-Caigua - Camiri",
+    "longitud_km": 112.4,
+    "diametro_pulg": 12,
+    "capacidad": 68.5,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 1997,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.3,
+        -63.3
+      ],
+      [
+        -20.2838,
+        -63.5734
+      ],
+      [
+        -20.2957,
+        -63.3763
+      ],
+      [
+        -19.9092,
+        -63.5597
+      ],
+      [
+        -20.05,
+        -63.52
+      ]
+    ]
+  },
+  {
+    "id": "SIS-014",
+    "codigo": "RSM",
+    "nombre": "Ramal Sábalo - Margarita",
+    "tipo": "gasoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Sábalo - Campo Margarita",
+    "longitud_km": 93.2,
+    "diametro_pulg": 8,
+    "capacidad": 44.6,
+    "unidad": "MMpcd",
+    "productos": [
+      "gas_natural"
+    ],
+    "anio": 2011,
+    "estado": "operativo",
+    "coords": [
+      [
+        -21.85,
+        -63.55
+      ],
+      [
+        -21.9199,
+        -63.3439
+      ],
+      [
+        -21.6304,
+        -63.6411
+      ],
+      [
+        -21.7,
+        -63.4
+      ]
+    ]
+  },
+  {
+    "id": "SIS-015",
+    "codigo": "OCSA",
+    "nombre": "Oleoducto Carrasco - Sica Sica",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Cochabamba - Oruro",
+    "longitud_km": 129.6,
+    "diametro_pulg": 16,
+    "capacidad": 23476,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1978,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.39,
+        -66.16
+      ],
+      [
+        -17.757,
+        -66.4387
+      ],
+      [
+        -17.98,
+        -67.15
+      ]
+    ]
+  },
+  {
+    "id": "SIS-016",
+    "codigo": "OCSC",
+    "nombre": "Oleoducto Camiri - Santa Cruz",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Camiri - Santa Cruz de la Sierra",
+    "longitud_km": 268.7,
+    "diametro_pulg": 10,
+    "capacidad": 11975,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1975,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.05,
+        -63.52
+      ],
+      [
+        -19.3687,
+        -63.506
+      ],
+      [
+        -18.9771,
+        -63.1541
+      ],
+      [
+        -18.1151,
+        -63.2865
+      ],
+      [
+        -17.78,
+        -63.18
+      ]
+    ]
+  },
+  {
+    "id": "SIS-017",
+    "codigo": "OSPS",
+    "nombre": "Oleoducto Santa Cruz - Puerto Suárez",
+    "tipo": "oleoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Santa Cruz de la Sierra - Puerto Suárez",
+    "longitud_km": 583.7,
+    "diametro_pulg": 8,
+    "capacidad": 11483,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1993,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.78,
+        -63.18
+      ],
+      [
+        -18.5726,
+        -60.3822
+      ],
+      [
+        -18.96,
+        -57.8
+      ]
+    ]
+  },
+  {
+    "id": "SIS-018",
+    "codigo": "OSSA",
+    "nombre": "Oleoducto Sica Sica - Arica (tramo boliviano)",
+    "tipo": "oleoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Oruro - Charaña (frontera)",
+    "longitud_km": 273.1,
+    "diametro_pulg": 10,
+    "capacidad": 9804,
+    "unidad": "BPD",
+    "productos": [
+      "crudo",
+      "reconstituido"
+    ],
+    "anio": 1966,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.98,
+        -67.15
+      ],
+      [
+        -18.0605,
+        -67.5254
+      ],
+      [
+        -17.6221,
+        -68.3746
+      ],
+      [
+        -17.8794,
+        -68.9845
+      ],
+      [
+        -17.58,
+        -69.45
+      ]
+    ]
+  },
+  {
+    "id": "SIS-019",
+    "codigo": "PRSZ",
+    "nombre": "Propanoducto Río Grande - Santa Cruz",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Río Grande - Santa Cruz de la Sierra",
+    "longitud_km": 108.4,
+    "diametro_pulg": 6,
+    "capacidad": 7586,
+    "unidad": "BPD",
+    "productos": [
+      "glp"
+    ],
+    "anio": 2009,
+    "estado": "operativo",
+    "coords": [
+      [
+        -18.3,
+        -63.4
+      ],
+      [
+        -18.3516,
+        -63.1817
+      ],
+      [
+        -17.7159,
+        -63.0764
+      ],
+      [
+        -17.78,
+        -63.18
+      ]
+    ]
+  },
+  {
+    "id": "SIS-020",
+    "codigo": "OCC",
+    "nombre": "Oleoducto Colpa - Camiri",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Colpa-Caigua - Camiri",
+    "longitud_km": 86.7,
+    "diametro_pulg": 8,
+    "capacidad": 8978,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1994,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.3,
+        -63.3
+      ],
+      [
+        -20.3081,
+        -63.2762
+      ],
+      [
+        -19.8971,
+        -63.666
+      ],
+      [
+        -20.05,
+        -63.52
+      ]
+    ]
+  },
+  {
+    "id": "SIS-021",
+    "codigo": "OMC",
+    "nombre": "Oleoducto Monteagudo - Camiri",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Monteagudo - Camiri",
+    "longitud_km": 110.6,
+    "diametro_pulg": 6,
+    "capacidad": 5426,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1990,
+    "estado": "operativo",
+    "coords": [
+      [
+        -19.8,
+        -63.98
+      ],
+      [
+        -20.0593,
+        -63.8946
+      ],
+      [
+        -19.7389,
+        -63.6984
+      ],
+      [
+        -20.05,
+        -63.52
+      ]
+    ]
+  },
+  {
+    "id": "SIS-022",
+    "codigo": "OBY",
+    "nombre": "Oleoducto Bermejo - Yacuiba",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Bermejo - Yacuiba",
+    "longitud_km": 118.3,
+    "diametro_pulg": 6,
+    "capacidad": 8636,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1988,
+    "estado": "operativo",
+    "coords": [
+      [
+        -22.73,
+        -64.35
+      ],
+      [
+        -22.6918,
+        -64.3521
+      ],
+      [
+        -22.2931,
+        -63.6619
+      ],
+      [
+        -22.02,
+        -63.65
+      ]
+    ]
+  },
+  {
+    "id": "SIS-023",
+    "codigo": "OGEB",
+    "nombre": "Oleoducto Guillermo Elder Bell",
+    "tipo": "oleoducto",
+    "mercado": "exportacion",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Charaña (frontera) - Oruro",
+    "longitud_km": 253,
+    "diametro_pulg": 10,
+    "capacidad": 14088,
+    "unidad": "BPD",
+    "productos": [
+      "crudo",
+      "reconstituido"
+    ],
+    "anio": 1966,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.58,
+        -69.45
+      ],
+      [
+        -17.7977,
+        -68.6688
+      ],
+      [
+        -17.7393,
+        -67.7091
+      ],
+      [
+        -17.98,
+        -67.15
+      ]
+    ]
+  },
+  {
+    "id": "SIS-024",
+    "codigo": "OVGC",
+    "nombre": "Oleoducto Vuelta Grande - Camiri",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Vuelta Grande - Camiri",
+    "longitud_km": 54.1,
+    "diametro_pulg": 6,
+    "capacidad": 5913,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1985,
+    "estado": "operativo",
+    "coords": [
+      [
+        -19.9,
+        -63.6
+      ],
+      [
+        -19.9903,
+        -63.6226
+      ],
+      [
+        -20.1471,
+        -63.4113
+      ],
+      [
+        -20.05,
+        -63.52
+      ]
+    ]
+  },
+  {
+    "id": "SIS-025",
+    "codigo": "OPSC",
+    "nombre": "Oleoducto Palmasola - Santa Cruz",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Palmasola - Santa Cruz de la Sierra",
+    "longitud_km": 63.9,
+    "diametro_pulg": 6,
+    "capacidad": 6432,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1992,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.72,
+        -63.24
+      ],
+      [
+        -17.5406,
+        -63.1029
+      ],
+      [
+        -17.6704,
+        -63.1131
+      ],
+      [
+        -17.6895,
+        -63.0462
+      ],
+      [
+        -17.78,
+        -63.18
+      ]
+    ]
+  },
+  {
+    "id": "SIS-026",
+    "codigo": "OKC",
+    "nombre": "Oleoducto Kenko - Cochabamba",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Colpa-Caigua - Cochabamba",
+    "longitud_km": 443.2,
+    "diametro_pulg": 8,
+    "capacidad": 10880,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1996,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.3,
+        -63.3
+      ],
+      [
+        -19.353,
+        -64.0842
+      ],
+      [
+        -18.4926,
+        -65.1172
+      ],
+      [
+        -17.39,
+        -66.16
+      ]
+    ]
+  },
+  {
+    "id": "SIS-027",
+    "codigo": "OCK",
+    "nombre": "Oleoducto Carrasco - Kenko",
+    "tipo": "oleoducto",
+    "mercado": "interno",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Cochabamba - Colpa-Caigua",
+    "longitud_km": 446.4,
+    "diametro_pulg": 8,
+    "capacidad": 7381,
+    "unidad": "BPD",
+    "productos": [
+      "crudo"
+    ],
+    "anio": 1996,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.39,
+        -66.16
+      ],
+      [
+        -18.603,
+        -65.1984
+      ],
+      [
+        -19.3495,
+        -64.0805
+      ],
+      [
+        -20.3,
+        -63.3
+      ]
+    ]
+  },
+  {
+    "id": "SIS-028",
+    "codigo": "PSCC",
+    "nombre": "Poliducto Santa Cruz - Cochabamba",
+    "tipo": "poliducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Santa Cruz de la Sierra - Cochabamba",
+    "longitud_km": 325.6,
+    "diametro_pulg": 8,
+    "capacidad": 8799,
+    "unidad": "BPD",
+    "productos": [
+      "gasolina",
+      "diesel_oil",
+      "glp",
+      "jet_fuel"
+    ],
+    "anio": 1979,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.78,
+        -63.18
+      ],
+      [
+        -17.4609,
+        -63.9904
+      ],
+      [
+        -17.5649,
+        -65.3339
+      ],
+      [
+        -17.39,
+        -66.16
+      ]
+    ]
+  },
+  {
+    "id": "SIS-029",
+    "codigo": "PCOLP",
+    "nombre": "Poliducto Cochabamba - Oruro - La Paz",
+    "tipo": "poliducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Cochabamba - La Paz",
+    "longitud_km": 241.5,
+    "diametro_pulg": 8,
+    "capacidad": 6179,
+    "unidad": "BPD",
+    "productos": [
+      "gasolina",
+      "diesel_oil",
+      "glp",
+      "jet_fuel"
+    ],
+    "anio": 1979,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.39,
+        -66.16
+      ],
+      [
+        -17.3418,
+        -66.664
+      ],
+      [
+        -16.6901,
+        -67.4691
+      ],
+      [
+        -16.5,
+        -68.15
+      ]
+    ]
+  },
+  {
+    "id": "SIS-030",
+    "codigo": "PSSEA",
+    "nombre": "Poliducto Sica Sica - El Alto",
+    "tipo": "poliducto",
+    "mercado": "interno",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Oruro - El Alto",
+    "longitud_km": 200.5,
+    "diametro_pulg": 6,
+    "capacidad": 4809,
+    "unidad": "BPD",
+    "productos": [
+      "gasolina",
+      "diesel_oil",
+      "glp",
+      "jet_fuel"
+    ],
+    "anio": 1980,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.98,
+        -67.15
+      ],
+      [
+        -17.5003,
+        -67.4855
+      ],
+      [
+        -16.9323,
+        -68.0104
+      ],
+      [
+        -16.5,
+        -68.2
+      ]
+    ]
+  },
+  {
+    "id": "SIS-031",
+    "codigo": "PCS",
+    "nombre": "Poliducto Camiri - Sucre",
+    "tipo": "poliducto",
+    "mercado": "interno",
+    "operador": "YPFB Logística S.A.",
+    "tramo": "Camiri - Sucre",
+    "longitud_km": 217.2,
+    "diametro_pulg": 6,
+    "capacidad": 6567,
+    "unidad": "BPD",
+    "productos": [
+      "gasolina",
+      "diesel_oil",
+      "glp",
+      "jet_fuel"
+    ],
+    "anio": 1991,
+    "estado": "operativo",
+    "coords": [
+      [
+        -20.05,
+        -63.52
+      ],
+      [
+        -19.3377,
+        -64.4511
+      ],
+      [
+        -19.03,
+        -65.26
+      ]
+    ]
+  },
+  {
+    "id": "SIS-032",
+    "codigo": "PCSU",
+    "nombre": "Poliducto Carrasco - Sucre",
+    "tipo": "poliducto",
+    "mercado": "interno",
+    "operador": "YPFB Transporte S.A.",
+    "tramo": "Cochabamba - Sucre",
+    "longitud_km": 209,
+    "diametro_pulg": 6,
+    "capacidad": 4878,
+    "unidad": "BPD",
+    "productos": [
+      "gasolina",
+      "diesel_oil",
+      "glp",
+      "jet_fuel"
+    ],
+    "anio": 2002,
+    "estado": "operativo",
+    "coords": [
+      [
+        -17.39,
+        -66.16
+      ],
+      [
+        -18.2172,
+        -65.906
+      ],
+      [
+        -19.03,
+        -65.26
+      ]
+    ]
+  }
+]

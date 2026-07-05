@@ -1,0 +1,17 @@
+{
+  "name": "ductovision-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "gen:data": "node scripts/generar_datos.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
