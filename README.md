@@ -106,3 +106,14 @@ Verificado: `npm run build` + `npm start` + `curl` a los endpoints principales (
 6. El plan Free de Render "duerme" el servicio tras inactividad: la primera solicitud tras el sleep puede tardar **~30-60 segundos** en responder mientras el contenedor arranca — esto es esperado y no es una falla de la app.
 
 Este README documenta los pasos; no se ejecutó ningún despliegue real como parte de esta tarea.
+
+## Despliegue en Coolify (Dockerfile)
+
+El repo incluye un `Dockerfile` multi-stage en la raíz (build de `client/` con Vite en un stage separado, luego runtime Node 20-alpine con Express sirviendo `/api/*` + `client/dist`). Coolify lo detecta automáticamente al apuntar a este repositorio.
+
+1. En Coolify, crear una nueva **Application** → **Public/Private Repository** (o GitHub App) apuntando a `yfloresl/demo_YPFB`, rama a desplegar (`main` o la rama de trabajo).
+2. **Build Pack**: `Dockerfile` (Coolify lo detecta al encontrar `Dockerfile` en la raíz; no usar Nixpacks para evitar ambigüedad con el monorepo `client/`+`server/`).
+3. **Puerto expuesto**: `4000` (definido en el `Dockerfile` con `EXPOSE 4000`; Coolify lo mapea automáticamente a su proxy/dominio).
+4. **Variables de entorno**: ninguna obligatoria. Opcionalmente fijar `PORT=4000` si Coolify no lo inyecta por defecto (el server ya usa `process.env.PORT || 4000`).
+5. Deploy. El build corre ambos `npm install` (client y server) dentro de la imagen — no requiere ejecutar `npm run build` manualmente antes.
+6. Sin base de datos ni volúmenes persistentes requeridos (dataset estático en `server/data/*.json`, incluido en la imagen).
